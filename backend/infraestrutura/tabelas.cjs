@@ -1,10 +1,10 @@
 class Tabelas {
     init(conexao){
       this.conexao = conexao;
-      this.criarTbelaAtendimnentos();
+      this.criarTabelaAtendimnentos();
     }
 
-    criarTbelaAtendimnentos(){
+    criarTabelaAtendimnentos(){
       const sql =
        `
         CREATE TABLE IF NOT EXISTS atendimentos(

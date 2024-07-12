@@ -5,9 +5,11 @@ const router = require("./routers/index.cjs")
 const conexao = require("./infraestrutura/conexao.cjs")
 const tabelas = require("./infraestrutura/tabelas.cjs")
 
+
+router(app, express);
 tabelas.init(conexao);
 
-router(app);
+
 
 app.listen(port, (error) => {
    if(error) {

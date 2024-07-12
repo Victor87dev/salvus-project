@@ -3,13 +3,18 @@ const router = Router()
 const atendimentoController = require("../controllers/atendimentoController.cjs")
 
 router.get("/atendimentos", (req, res)=> {
-  const resposta = atendimentoController.buscar();
-  res.send(resposta)
+  const listaAtendimentos = atendimentoController.buscar();
+  listaAtendimentos
+  .then(atendimentos => res.status(200).json(atendimentos))
+  .catch((error) => res.status(400).json(error.message))
 })
 
 router.post("/atendimentos", (req, res) => {
-  const resposta = atendimentoController.criar()
-  res.send(resposta)  
+  const novoAtendimento = req.body
+  const atendimento = atendimentoController.criar(novoAtendimento)
+  atendimento
+  .then(atendimentoCriado => res.status(200).json(atendimentoCriado))
+  .catch(error => res.status(400).json(error.message))
 })
 
 router.put("/atendimento/:id", (req, res) => {

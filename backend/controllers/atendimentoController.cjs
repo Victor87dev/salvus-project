@@ -1,9 +1,11 @@
+const atendimentoModel = require("../models/atendimentoModel.cjs")
+
 class AtendimentoController{
    buscar(){
-    return "Buscando atendimentos"
+    return atendimentoModel.listar()
    }
-   criar(){
-    return "Criando atendimento..."
+   criar(novoAtendimento){
+    return atendimentoModel.criar(novoAtendimento)
    }
    alterar(id){
      return `Alterando atendimento número ${id}...`
