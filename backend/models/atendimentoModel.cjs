@@ -1,60 +1,35 @@
 const conexao = require("../infraestrutura/conexao.cjs")
 
 class AtendimentoModel {
+   executaQuery(sql, parametros = ""){
+     return new Promise((resolve, reject) => {
+      conexao.query(sql, parametros, (error, resposta) => {
+        if(error){
+         return reject(error)
+        }
+        return resolve(resposta)
+      })
+     })
+   }
+
    listar(){
     const sql = "SELECT * FROM atendimentos"
-     return new Promise((resolve, reject) => {
-      conexao.query(sql, {}, (error, resposta) => {
-         if(error){
-             console.log("Deu erro no listar...")
-             reject(error)
-         }
-         console.log("show")
-         resolve(resposta)
-      })
-     }) 
+     return this.executaQuery(sql) 
    }
 
   criar(novoAtendimento){
    const sql = `INSERT INTO atendimentos SET ?`
-   return new Promise((resolve, reject) => {
-      conexao.query(sql, novoAtendimento, (error, resposta) => {
-         if(error){
-          console.log("Deu erro no listar1...")
-          reject(error)
-         }
-         console.log("show")
-         resolve(resposta)
-       })
-   }) 
+   return this.executaQuery(sql, novoAtendimento)
   }
 
   atualizar(atendimentoAtualizado, id){
    const sql = "UPDATE atendimentos SET ? WHERE id = ?"
-   return new Promise((resolve, reject) => {
-      conexao.query(sql, [atendimentoAtualizado, id], (error, resposta) => {
-         if(error){
-          console.log("Deu erro no listar1...")
-          reject(error)
-         }
-         console.log("show")
-         resolve(resposta)
-       })
-   }) 
+   return this.executaQuery(sql, [atendimentoAtualizado, id]) 
   }
 
   delete(id){
    const sql = "DELETE FROM atendimentos WHERE id = ?"
-   return new Promise((resolve, reject) => {
-      conexao.query(sql, id, (error, resposta) => {
-         if(error){
-          console.log("Deu erro no listar1...")
-          reject(error)
-         }
-         console.log("show")
-         resolve(resposta)
-       })
-   }) 
+   return this.executaQuery(sql, id)
   }
 
 }
