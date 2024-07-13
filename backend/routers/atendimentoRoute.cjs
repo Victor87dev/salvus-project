@@ -18,15 +18,24 @@ router.post("/atendimentos", (req, res) => {
 })
 
 router.put("/atendimento/:id", (req, res) => {
-  const { id } = req.params;
-  const resposta = atendimentoController.alterar(id)
-  res.send(resposta)  
+  const { id } = req.params
+  const atendimentoAtualizado = req.body
+  const atendimento = atendimentoController.alterar(atendimentoAtualizado, id)
+  atendimento
+  .then((resultAtendimentoAtualizado) =>
+    res.status(200).json(resultAtendimentoAtualizado) 
+  )
+  .catch((error) => res.status(400).json(error.message))
 })
 
 router.delete("/atendimento/:id", (req, res) => {
-   const { id } = req.params;
-   const resposta = atendimentoController.deletar(id)
-   res.send(resposta)  
+  const { id } = req.params
+  const atendimento = atendimentoController.deletar(id)
+  atendimento
+  .then((resultAtendimentoDeletado) =>
+    res.status(200).json(resultAtendimentoDeletado) 
+  )
+  .catch((error) => res.status(400).json(error.message)) 
 })
 
 module.exports = router

@@ -29,6 +29,34 @@ class AtendimentoModel {
    }) 
   }
 
+  atualizar(atendimentoAtualizado, id){
+   const sql = "UPDATE atendimentos SET ? WHERE id = ?"
+   return new Promise((resolve, reject) => {
+      conexao.query(sql, [atendimentoAtualizado, id], (error, resposta) => {
+         if(error){
+          console.log("Deu erro no listar1...")
+          reject(error)
+         }
+         console.log("show")
+         resolve(resposta)
+       })
+   }) 
+  }
+
+  delete(id){
+   const sql = "DELETE FROM atendimentos WHERE id = ?"
+   return new Promise((resolve, reject) => {
+      conexao.query(sql, id, (error, resposta) => {
+         if(error){
+          console.log("Deu erro no listar1...")
+          reject(error)
+         }
+         console.log("show")
+         resolve(resposta)
+       })
+   }) 
+  }
+
 }
 
 module.exports = new AtendimentoModel()

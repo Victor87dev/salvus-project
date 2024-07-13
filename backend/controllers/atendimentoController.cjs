@@ -7,11 +7,11 @@ class AtendimentoController{
    criar(novoAtendimento){
     return atendimentoModel.criar(novoAtendimento)
    }
-   alterar(id){
-     return `Alterando atendimento número ${id}...`
+   alterar(atendimentoAtualizado, id){
+     return atendimentoModel.atualizar(atendimentoAtualizado, id)
    }
    deletar(id){
-     return `Deletando atendimento número ${id}...`
+     return atendimentoModel.delete(id)
    }
 }
 
