@@ -1,18 +1,18 @@
 class Tabelas {
     init(conexao){
       this.conexao = conexao;
-      this.criarTabelaAtendimnentos();
+      this.criarTabelaProdutos();
     }
 
-    criarTabelaAtendimnentos(){
+    criarTabelaProdutos(){
       const sql =
        `
-        CREATE TABLE IF NOT EXISTS atendimentos(
+        CREATE TABLE IF NOT EXISTS produtos(
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        DATA DATE,
-        servico VARCHAR(100),
-        cliente VARCHAR(100),
-        STATUS ENUM("ativo", "realizado", "cancelado") DEFAULT "ativo"
+        nome VARCHAR(50),
+        descricao VARCHAR(200),
+        preco FLOAT,
+        DATA DATE
         );
        `;
        this.conexao.query(sql, (error) => {
