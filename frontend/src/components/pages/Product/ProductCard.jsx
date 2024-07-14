@@ -16,7 +16,7 @@ const ProductCard = ({id, name, descricao, budget, data, handleRemove})=>{
                <span>Descrição</span> {descricao}
             </p>
             <p>
-               <span>Preço</span> {budget}
+               <span>Preço</span> R${budget}
             </p>
             <p>
                <span>Data</span> {data}
