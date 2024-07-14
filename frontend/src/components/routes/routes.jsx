@@ -13,7 +13,7 @@ return(
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/novo_produto" element={<NewProduct />} />
-                <Route path="/editar_produto" element={<EditProduct />} />
+                <Route path="/editar_produto/:id" element={<EditProduct />} />
             </Routes>
         </Container>
 )

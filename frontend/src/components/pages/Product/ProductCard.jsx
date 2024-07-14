@@ -22,7 +22,7 @@ const ProductCard = ({id, name, descricao, budget, data, handleRemove})=>{
                <span>Data</span> {data}
             </p>
             <div className="product_card_actions">
-                <Link to={`/product/${id}`}>
+                <Link to={`/editar_produto/${id}`}>
                     <BsPencil className="color_yellow"/> Editar
                 </Link>
                 <button onClick={remove}>
