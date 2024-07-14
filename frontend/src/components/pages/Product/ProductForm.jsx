@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react"
 import "./ProductForm.css"
 import Input from "../../Form/Input"
-import SubmitButton from "../../Form/SubmitButton"
+import LinkButton from "../../layout/LinkButton"
 import Message from "../../layout/Message"
 
 const ProjectForm = ({ handleSubmit, btnText, productData})=>{
@@ -56,7 +56,7 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
         <Input type="text" text="Descrição do produto" name="descricao" placeholder="Insira uma descrição" handleOnChange={handleChange} value={product.descricao ? product.descricao : ''}/>
         <Input type="number" text="Valor do produto" name="budget" placeholder="Insira o valor" handleOnChange={handleChange} value={product.budget ? product.budget : ''}/>
         <Input type="date" text="Data de criação" name="data" placeholder="Insira a data" handleOnChange={handleChange} value={product.data ? product.data : ''}/>
-        <SubmitButton text={btnText}/>
+        <LinkButton to="/" text={btnText}/>
     </form>
   </>
     

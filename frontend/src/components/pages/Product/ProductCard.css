@@ -1,0 +1,142 @@
+.product_card {
+ padding: 1em;
+ border: 2px solid #d8940b;
+ border-radius: 5px;
+ width: 24%;
+ margin: 0.5%;
+ box-shadow: #d8940b 0px 1px 8px;
+ background-color: #fff;
+}
+
+.product_card h4{
+ background-color: #222;
+ color: #d8940b;
+ padding: .4em;
+ margin-bottom: 1.3em;
+ font-size: 1.3em;
+ border-radius: 3px;
+}
+
+.product_card p {
+ color: #7a7a7a;
+ margin-bottom: 1em;
+}
+
+.product_card p span{
+ font-weight: bold;
+}
+
+.product_card_actions{
+ margin-top: 1.2em;
+ display: flex;
+ align-items: center;
+}
+
+.product_card_actions a,
+.product_card_actions button{
+ text-decoration: none;
+ border: none;
+ background-color: #efefef;
+ color: #222;
+ font-size: .9em;
+ padding: .6em 1em;
+ cursor: pointer;
+ margin-right: 1em;
+ border: 1px solid #222;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transition: 0.5s;
+ border-radius: 3px;
+}
+
+.product_card_actions svg{
+ margin-right: .5em;
+}
+
+.product_card_actions a:hover,
+.product_card_actions button:hover{
+ background-color: #222;
+ color: #ffbb33;
+}
+
+.color_yellow{
+ color: #d39210;
+}
+
+@media screen and (max-width: 1200px){
+.product_card {
+ width: 30%;
+}
+}
+
+@media screen and (max-width: 950px){
+.product_card {
+ width: 36%;
+}
+}
+
+@media screen and (max-width: 780px){
+.product_card {
+ width: 46%;
+}
+.product_card_actions a,
+.product_card_actions button{
+ padding: .6em 1em;
+ font-size: .8em;
+}
+.product_card_actions{
+  margin-left: -8px;
+}
+}
+
+@media screen and (max-width: 590px){
+.product_card_actions a,
+.product_card_actions button{
+ padding: .6em 1em;
+ font-size: .6em;
+}
+}
+
+@media screen and (max-width: 500px){
+.product_card {
+ width: 60%;
+ margin-bottom: 40px;
+}
+
+.product_card_actions a,
+.product_card_actions button{
+ padding: .6em 1em;
+ font-size: .7em;
+}
+
+}
+
+@media screen and (max-width: 400px){
+.product_card {
+ width: 70%;
+}
+
+.product_card_actions{
+ margin-left: 0px;
+}
+
+}
+
+@media screen and (max-width: 350px){
+.product_card {
+ width: 80%;
+}
+
+.product_card_actions{
+  margin-left: -3px;
+}
+
+}
+
+@media screen and (max-width: 315px){
+.product_card_actions{
+  margin-left: -8px;
+}
+
+}
