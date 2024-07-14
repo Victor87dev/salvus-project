@@ -38,6 +38,7 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
       return false 
     }
     console.log('funciona')
+    console.log(product.name)
     e.preventDefault()
     // console.log(project)
     handleSubmit(product)
@@ -54,7 +55,7 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
         <Input type="text" text="Nome do produto" name="name" placeholder="Insira o nome do produto" handleOnChange={handleChange} value={product.name ? product.name : ''}/>
         <Input type="text" text="Descrição do produto" name="descricao" placeholder="Insira uma descrição" handleOnChange={handleChange} value={product.descricao ? product.descricao : ''}/>
         <Input type="number" text="Valor do produto" name="budget" placeholder="Insira o valor" handleOnChange={handleChange} value={product.budget ? product.budget : ''}/>
-        <Input type="data" text="Data de criação" name="data" placeholder="Insira a data" handleOnChange={handleChange} value={product.data ? product.data : ''}/>
+        <Input type="date" text="Data de criação" name="data" placeholder="Insira a data" handleOnChange={handleChange} value={product.data ? product.data : ''}/>
         <SubmitButton text={btnText}/>
     </form>
   </>
