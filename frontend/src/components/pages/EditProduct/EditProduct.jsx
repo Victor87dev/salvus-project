@@ -1,6 +1,7 @@
 import LinkButton from "../../layout/LinkButton"
+import "./EditProduct.css"
 
-const EditarProduto = () => {
+const EditProduct = () => {
   return (
     <section>
       <LinkButton to="/" text="Home"/>
@@ -8,4 +9,4 @@ const EditarProduto = () => {
   )
 }
 
-export default EditarProduto
+export default EditProduct

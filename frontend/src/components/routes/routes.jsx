@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom"
 
 import Home from "../pages/Home/Home"
-import CadastroProduto from "../pages/CadastroProduto/CadastroProduto"
-import EditarProduto from "../pages/EditarProduto/EditarProduto"
+import NewProduct from "../pages/NewProduct/NewProduct"
+import EditProduct from "../pages/EditProduct/EditProduct"
 import Container from "../layout/Container"
+
 
 const AppRoutes = () => {
 return(
@@ -11,8 +12,8 @@ return(
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/cadastro_produto" element={<CadastroProduto />} />
-                <Route path="/editar_produto" element={<EditarProduto />} />
+                <Route path="/novo_produto" element={<NewProduct />} />
+                <Route path="/editar_produto" element={<EditProduct />} />
             </Routes>
         </Container>
 )
