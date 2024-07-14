@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-import ProjectForm from "../project/ProjectForm";
-import Message from "../layout/Message";
+import ProductForm from "../Product/ProductForm"
 
 import "./NewProduct.css"
 
@@ -18,7 +17,7 @@ const NewProduct = ()=>{
       headers: {
       'Content-type': 'application/json',
       },
-      body: JSON.stringify(project),
+      body: JSON.stringify(product),
       })
       .then((resp) => resp.json())
       .then((data) => {
@@ -33,7 +32,7 @@ const NewProduct = ()=>{
         <div className="newproject_container">
             <h1>Criar Projeto</h1>
             <p>Crie seu projeto para depois adicionar os serviços</p>
-            <ProjectForm handleSubmit={createProd} btnText="Criar Projeto"/>
+            <ProductForm handleSubmit={createProd} btnText="Criar Produto"/>
         </div>
     )
 }
