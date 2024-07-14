@@ -3,7 +3,7 @@ import "./LinkButton.css"
 
 const LinkButton = ({to, text}) => {
   return (
-    <Link to={to}>
+    <Link className="btn" to={to}>
       {text}
     </Link>
   )

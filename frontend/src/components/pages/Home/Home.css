@@ -1,0 +1,43 @@
+.product_container{
+ width: 100%;
+ padding: 2em;
+}
+
+.title_container{
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 2em;
+}
+
+.title{
+ color: #000000;
+ letter-spacing: 2px;
+}
+
+.span_produtos{
+ color: #4d9126;
+}
+
+@media screen and (max-width: 770px){
+.title{
+ font-size: 20px;
+ letter-spacing: none;
+} 
+}
+
+@media screen and (max-width: 650px){
+.title{
+ font-size: 18px;
+} 
+}
+
+@media screen and (max-width: 440px){
+.title_container{
+    flex-direction: column;
+    align-items: center;
+} 
+
+.title_container h1{
+    margin-bottom: 30px;
+} 
+}

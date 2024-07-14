@@ -1,15 +1,15 @@
 .btn{
-background-color: #000000;
-color: #ffffff;
-padding: 0.5em 1em;
-text-decoration: none;
-transition: 0.5s;
-border-radius: 3px;
-border: 1px solid #d8940b;
+ background-color: #000000;
+ color: #ffffff;
+ padding: 0.5em 1em;
+ text-decoration: none;
+ transition: 0.5s;
+ border-radius: 8px;
+ border: 2px solid #6fce38;
 }
 
 .btn:hover{
-color: #d8940b;
+ color: #6fce38;
 }
 
 @media screen and (max-width: 750px){
