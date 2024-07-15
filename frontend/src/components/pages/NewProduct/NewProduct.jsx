@@ -7,26 +7,27 @@ import "./NewProduct.css"
 const NewProduct = ()=>{
 
     const navigate = useNavigate()
+    
+    const createProd = (product, id)=>{
+       
+     product.products = []
 
-    const createProd = (product)=>{
-      // initialize cost and services
-      product.products = []
-
-      fetch('http://localhost:3000/produtos',{
-      method: "POST",
-      headers: {
-      'Content-type': 'application/json',
-      },
-      body: JSON.stringify(product),
-      })
-      .then((resp) => resp.json())
-      .then((data) => {
-       console.log(data)
-      })
-      .catch((err) => console.log(err))
-      // redirect
-      navigate('/home', { state: { message: 'Produto criado com sucesso!' } })
+    fetch(`http://localhost:3000/produtos`,{
+     method: "POST",
+     headers: {
+     'Content-type': 'application/json',
+    },
+     body: JSON.stringify(product),
+    })
+     .then((resp) => resp.json())
+     .then((data) => {
+     console.log(data)
+    })
+     .catch((err) => console.log(err))
+     // redirect
+     navigate('/home', { state: { message: 'Produto criado com sucesso!' } })
     }
+    
     
     return (
         <div className="newproject_container">

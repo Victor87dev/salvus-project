@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./ProductForm.css"
 import Input from "../../Form/Input"
-import LinkButton from "../../layout/LinkButton"
+import SubmitButton from "../../Form/SubmitButton"
 import Message from "../../layout/Message"
 
 const ProjectForm = ({ handleSubmit, btnText, productData})=>{
@@ -11,7 +11,7 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
   const [type, setType] = useState()
   
   const submit = (e)=>{
-    if(product.nome === undefined || product.descricao === undefined || product.preco === undefined || product.data === undefined || product.nome === '' || product.descricao === '' || product.preco === '' || product.data === ''){
+    if(product.nome === undefined || product.descricao === undefined || product.preco === undefined || product.DATA === undefined || product.nome === '' || product.descricao === '' || product.preco === '' || product.DATA === ''){
       e.preventDefault()
       setMessage('Informações incompletas, certifique-se de completar as informações!')
       setType('error')
@@ -42,7 +42,7 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
         <Input type="text" text="Descrição do produto" name="descricao" placeholder="Insira uma descrição" handleOnChange={handleChange} value={product.descricao ? product.descricao : ''}/>
         <Input type="number" text="Valor do produto" name="preco" placeholder="Insira o valor" handleOnChange={handleChange} value={product.preco ? product.preco : ''}/>
         <Input type="date" text="Data de criação" name="DATA" placeholder="Insira a data" handleOnChange={handleChange} value={product.DATA ? product.DATA : ''}/>
-        <LinkButton to="/" text={btnText}/>
+        <SubmitButton text={btnText}/>
     </form>
   </>
     
