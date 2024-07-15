@@ -8,9 +8,7 @@ const NewProduct = ()=>{
 
     const navigate = useNavigate()
     
-    const createProd = (product, id)=>{
-       
-     product.products = []
+    const createProd = (product)=>{
 
     fetch(`http://localhost:3000/produtos`,{
      method: "POST",
