@@ -17,12 +17,12 @@ const Home = () => {
 
   const location = useLocation()
   let message = ''
-  if(location.state && projects.length > 0){
+  if(location.state && products.length > 0){
     message = location.state.message
   }
 
   useEffect(()=>{
-      fetch('https://db-json-server-six.vercel.app/projects',{
+      fetch('http://localhost:3000/produtos',{
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Home = () => {
 
     setProductMessage('')
 
-    fetch(`https://db-json-server-six.vercel.app/projects/${id}`,{
+    fetch(`http://localhost:3000/produto/${id}`,{
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const Home = () => {
         })
         .catch((err)=>console.log(err))
         setProducts(products.filter((product) => product.id !== id))
-        setProductMessage('Projeto removido com sucesso!')
+        setProductMessage('Produto removido com sucesso!')
 
         setTimeout(()=>{
           setProductMessage('')
@@ -72,10 +72,10 @@ const Home = () => {
           products.map((product) => (
             <ProductCard 
             id={product.id}
-            name={product.name}
+            nome={product.nome}
             descricao={product.descricao}
-            budget={product.budget}
-            data={product.data}
+            preco={product.preco}
+            DATA={product.DATA}
             key={product.id}
             handleRemove={removeProduct}
             />

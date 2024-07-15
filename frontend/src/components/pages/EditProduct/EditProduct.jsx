@@ -21,7 +21,7 @@ const EditProduct = ()=>{
 
   useEffect(()=>{
     
-      fetch(`https://db-json-server-six.vercel.app/projects/${id}`,{
+      fetch(`http://localhost:3000/produto/${id}`,{
          method: 'GET',
          headers: {
           'Content-Type': 'application/json',
@@ -41,8 +41,8 @@ const EditProduct = ()=>{
 
     console.log(product)
 
-      fetch(`https://db-json-server-six.vercel.app/projects/${project.id}`,{
-        method: 'PATCH',
+      fetch(`http://localhost:3000/produto/${id}`,{
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -64,7 +64,7 @@ const EditProduct = ()=>{
       <Container customClass="column">
         {message && <Message type={type} msg={message}/>}
         <div className="details_container">
-          <h1><span className="spanDestaque">Produto:</span> {product.name}</h1>
+          <h1><span className="spanDestaque">Produto:</span> {product.nome}</h1>
           <LinkButton to="/" text="Voltar" />
           <div className="product_info">
               <ProductForm handleSubmit={editPost} btnText="Concluir edição" productData={product}/>

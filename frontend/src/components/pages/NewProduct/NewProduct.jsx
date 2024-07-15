@@ -12,7 +12,7 @@ const NewProduct = ()=>{
       // initialize cost and services
       product.products = []
 
-      fetch('https://db-json-server-six.vercel.app/projects',{
+      fetch('http://localhost:3000/produtos',{
       method: "POST",
       headers: {
       'Content-type': 'application/json',

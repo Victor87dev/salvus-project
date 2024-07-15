@@ -2,7 +2,7 @@ import "./ProductCard.css"
 import { Link } from "react-router-dom"
 import { BsPencil, BsFillTrashFill } from "react-icons/bs"
 
-const ProductCard = ({id, name, descricao, budget, data, handleRemove})=>{
+const ProductCard = ({id, nome, descricao, preco, DATA, handleRemove})=>{
 
     const remove = (e)=>{
      e.preventDefault
@@ -11,15 +11,15 @@ const ProductCard = ({id, name, descricao, budget, data, handleRemove})=>{
 
     return(
         <div className="product_card">
-            <h4>{name}</h4>
+            <h4>{nome}</h4>
             <p>
                <span>Descrição</span> {descricao}
             </p>
             <p>
-               <span>Preço</span> R${budget}
+               <span>Preço</span> R${preco}
             </p>
             <p>
-               <span>Data</span> {data}
+               <span>Data</span> {DATA}
             </p>
             <div className="product_card_actions">
                 <Link to={`/editar_produto/${id}`}>

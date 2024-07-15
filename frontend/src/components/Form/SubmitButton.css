@@ -1,15 +1,14 @@
 .btn{
-    background-color: #222;
-    color: #fff;
-    padding: 0.7em 1.2em;
-    text-decoration: none;
-    transition: .5s;
-    cursor: pointer;
-    border: none;
-    border-radius: 3px;
-    border: 1px solid #d8940b;
+ background-color: #000000;
+ color: #ffffff;
+ padding: 0.5em 1em;
+ text-decoration: none;
+ transition: 0.5s;
+ border-radius: 8px;
+ border: 2px solid #6fce38;
+ border: none;
 }
 
 .btn:hover{
-    color: #ffbb33;
+ color: #6fce38;
 }
