@@ -32,6 +32,11 @@
     width: 100%;
 }
 
+.spanDestaques{
+ background: transparent;
+ color: #fff;
+}
+
 .spanDestaque{
     color: #fff;
 }

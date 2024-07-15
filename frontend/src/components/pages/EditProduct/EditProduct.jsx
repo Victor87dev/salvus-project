@@ -14,14 +14,15 @@ const EditProduct = ()=>{
 
   const { id } = useParams()
   const [product, setProduct] = useState([])
+  const [showProductForm, setShowProductForm] = useState(false)
   const [message, setMessage] = useState()
   const [type, setType] = useState()
 
   const navigate = useNavigate()
 
   useEffect(()=>{
-    
-      fetch(`http://localhost:3000/produto/${id}`,{
+    setTimeout(()=>{
+      fetch(`http://localhost:3000/produtos/${id}`,{
          method: 'GET',
          headers: {
           'Content-Type': 'application/json',
@@ -32,7 +33,7 @@ const EditProduct = ()=>{
       setProduct(data)
       })
       .catch((err)=>console.log(err))
-      
+    }, 500)
   }, [id])
 
   function editPost(product){
@@ -42,7 +43,7 @@ const EditProduct = ()=>{
     console.log(product)
 
       fetch(`http://localhost:3000/produto/${id}`,{
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -58,17 +59,50 @@ const EditProduct = ()=>{
       }, 1800)
   }
 
+  function toggleProductForm(){
+    setShowProductForm(!showProductForm)
+  }
+  
+  
   return(<>
-    {product.name ? (
+  
+    {product.length > 0 ? (
+      
      <div className="product_details">
       <Container customClass="column">
         {message && <Message type={type} msg={message}/>}
         <div className="details_container">
-          <h1><span className="spanDestaque">Produto:</span> {product.nome}</h1>
+          <h1><span className="spanDestaques">Produto:</span> {product[0].nome}</h1>
           <LinkButton to="/" text="Voltar" />
-          <div className="product_info">
-              <ProductForm handleSubmit={editPost} btnText="Concluir edição" productData={product}/>
-          </div>
+          <button className="btn" onClick={toggleProductForm}>
+            {!showProductForm? (
+            'Editar Projeto'
+            ) :
+            (
+            'Fechar'
+            )
+            }
+            </button>
+            {!showProductForm ? (
+               <div className="product_info">
+                <p>
+                  <span>Descrição:</span> {product[0].descricao}
+                </p>
+                <p>
+                  <span>Preço</span> R${product[0].preco}
+                </p>
+                <p>
+                  <span>Data</span> {product[0].DATA}
+                </p>
+               </div>
+            ) 
+            : 
+            (
+              <div className="product_info">
+                <ProductForm handleSubmit={editPost} btnText="Concluir edição" productData={product}/>
+              </div>
+            )
+            }
         </div>
       </Container>
      </div>

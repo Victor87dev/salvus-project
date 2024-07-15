@@ -35,13 +35,15 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
     setProduct({ ...product, [e.target.name]: e.target.value})
   }
 
+ 
+
   return(<>
   {message && <Message type={type} msg={message}/>}
     <form onSubmit={submit} className="form">
-        <Input type="text" text="Nome do produto" name="nome" placeholder="Insira o nome do produto" handleOnChange={handleChange} value={product.nome ? product.nome : ''}/>
-        <Input type="text" text="Descrição do produto" name="descricao" placeholder="Insira uma descrição" handleOnChange={handleChange} value={product.descricao ? product.descricao : ''}/>
-        <Input type="number" text="Valor do produto" name="preco" placeholder="Insira o valor" handleOnChange={handleChange} value={product.preco ? product.preco : ''}/>
-        <Input type="date" text="Data de criação" name="DATA" placeholder="Insira a data" handleOnChange={handleChange} value={product.DATA ? product.DATA : ''}/>
+        <Input type="text" text="Nome do produto" name="nome" placeholder="Insira o nome do produto" handleOnChange={handleChange} value={product[0].nome ? product[0].nome : ''}/>
+        <Input type="text" text="Descrição do produto" name="descricao" placeholder="Insira uma descrição" handleOnChange={handleChange} value={product[0].descricao ? product[0].descricao : ''}/>
+        <Input type="number" text="Valor do produto" name="preco" placeholder="Insira o valor" handleOnChange={handleChange} value={product[0].preco ? product[0].preco : ''}/>
+        <Input type="date" text="Data de criação" name="DATA" placeholder="Insira a data" handleOnChange={handleChange} value={product[0].DATA ? product[0].DATA : ''}/>
         <SubmitButton text={btnText}/>
     </form>
   </>

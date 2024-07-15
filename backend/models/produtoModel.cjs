@@ -17,6 +17,11 @@ class ProdutoModel {
      return this.executaQuery(sql) 
    }
 
+   listar1(id){
+    const sql = "SELECT * FROM produtos WHERE id = ?"
+     return this.executaQuery(sql, id) 
+   }
+
   criar(novoProduto){
    const sql = `INSERT INTO produtos SET ?`
    return this.executaQuery(sql, novoProduto)

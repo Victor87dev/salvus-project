@@ -8,6 +8,14 @@ class ProdutoController{
   .catch((error) => res.status(400).json(error.message))
   }
 
+  buscar1(req, res){
+    const { id } = req.params
+    const listaProdutos = produtoModel.listar1(id)
+    return listaProdutos
+    .then(produtos => res.status(200).json(produtos))
+    .catch((error) => res.status(400).json(error.message))
+    }
+
   criar(req, res){
   const novoProduto = req.body
   const produto = produtoModel.criar(novoProduto)
