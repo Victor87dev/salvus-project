@@ -9,6 +9,14 @@ const ProductCard = ({id, nome, descricao, preco, DATA, handleRemove})=>{
      handleRemove(id)
     }
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}/${month}/${day}`; // Formato AAAA-MM-DD
+    };
+
     return(
         <div className="product_card">
             <h4>{nome}</h4>
@@ -19,7 +27,7 @@ const ProductCard = ({id, nome, descricao, preco, DATA, handleRemove})=>{
                <span>Preço</span> R${preco}
             </p>
             <p>
-               <span>Data</span> {DATA}
+               <span>Data</span> {formatDate(DATA)}
             </p>
             <div className="product_card_actions">
                 <Link to={`/editar_produto/${id}`}>

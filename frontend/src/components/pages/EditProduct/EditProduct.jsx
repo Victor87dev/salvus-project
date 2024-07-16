@@ -58,7 +58,14 @@ const EditProduct = ()=>{
   function toggleProductForm(){
     setShowProductForm(!showProductForm)
   }
-  
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}/${month}/${day}`; // Formato AAAA-MM-DD
+};
  
   return(<>
   
@@ -88,7 +95,7 @@ const EditProduct = ()=>{
                   <span>Preço</span> R${product[0].preco}
                 </p>
                 <p>
-                  <span>Data</span> {product[0].DATA}
+                  <span>Data</span> {formatDate(product[0].DATA)}
                 </p>
                </div>
             ) 
