@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 *{
-  background: #dddddd;
   color: #000000;
   margin: 0;
   padding: 0;
@@ -10,7 +9,9 @@
 }
 
 body{
-  height: 100vh;
+  background-image: url(./components/img/fundo.png);
+  background-size: cover;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

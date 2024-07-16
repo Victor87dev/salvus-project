@@ -22,6 +22,7 @@ const Home = () => {
   }
 
   useEffect(()=>{
+    setTimeout(()=>{
       fetch('http://localhost:3000/produtos',{
         method: 'GET',
         headers: {
@@ -34,6 +35,7 @@ const Home = () => {
           setRemoveLoading(true)
         })
         .catch((err)=>console.log(err))
+      }, 1800)
   }, [])
 
   function removeProduct(id){
@@ -62,7 +64,7 @@ const Home = () => {
   return (
     <div className="product_container">
       <div className="title_container">
-        <h1 className="title">Meus <span className="span_produtos">Produtos</span></h1>
+        <h1 className="title">Meus Produtos</h1>
         <LinkButton to="/novo_produto" text="Criar Produto"/>
       </div>
       {message && <Message  type="sucess" msg={message}/>}

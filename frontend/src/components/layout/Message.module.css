@@ -9,9 +9,10 @@
 }
 
 .sucess{
- color: #155724;
- background-color: #d4edda;
- border-color: #c3e6cb;
+ color: #000000;
+ background-color: #ffffff;
+ border: 2px solid #28b348;
+ font-weight: bold;
 }
 
 .error{

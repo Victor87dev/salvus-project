@@ -38,6 +38,7 @@ const EditProduct = ()=>{
   }, [id])
   
   function editPost(product){
+    setTimeout(()=>{
       fetch(`http://localhost:3000/produto/${id}`,{
         method: 'PUT',
         headers: {
@@ -53,6 +54,7 @@ const EditProduct = ()=>{
       setTimeout(()=>{
         navigate(`/`)
       }, 1800)
+    }, 500)
   }
 
   function toggleProductForm(){

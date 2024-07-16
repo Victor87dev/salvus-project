@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 
 import ProductForm from "../Product/ProductForm"
+import LinkButton from "../../layout/LinkButton"
 
 import "./NewProduct.css"
 
@@ -30,8 +31,9 @@ const NewProduct = ()=>{
     return (
         <div className="newproject_container">
             <h1>Criar Produto</h1>
-            <p>Crie seu produto</p>
+            <p>Preencha os dados para criar seu produto</p>
             <ProductForm handleSubmit={createProd} btnText="Criar Produto"/>
+             <LinkButton to="/" text="Voltar"/>
         </div>
     )
 }

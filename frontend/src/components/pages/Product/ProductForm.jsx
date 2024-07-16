@@ -10,6 +10,13 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
   const [message, setMessage] = useState()
   const [type, setType] = useState()
  
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`; // Formato AAAA-MM-DD
+};
   
   const submit = (e)=>{
     if(product.nome === undefined || product.descricao === undefined || product.preco === undefined || product.DATA === undefined || product.nome === '' || product.descricao === '' || product.preco === '' || product.DATA === ''){
@@ -35,13 +42,7 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
     setProduct({ ...product, [e.target.name]: e.target.value})
   }
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`; // Formato AAAA-MM-DD
-};
+
 
   console.log(product.DATA)  
 
@@ -51,7 +52,7 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
         <Input type="text" text="Nome do produto" name="nome" placeholder="Insira o nome do produto" handleOnChange={handleChange} value={product.nome ? product.nome : ''}/>
         <Input type="text" text="Descrição do produto" name="descricao" placeholder="Insira uma descrição" handleOnChange={handleChange} value={product.descricao ? product.descricao : ''}/>
         <Input type="number" text="Valor do produto" name="preco" placeholder="Insira o valor" handleOnChange={handleChange} value={product.preco ? product.preco : ''}/>
-        <Input type="date" text="Data de criação" name="DATA" placeholder="Insira a data" handleOnChange={handleChange} value={product.DATA ? formatDate(product.DATA) : ''}/>
+        <Input type="date" text="Data de criação" name="DATA" placeholder="Insira a data" handleOnChange={handleChange} value={product.DATA ? product.DATA : ''}/>
         <SubmitButton text={btnText}/>
     </form>
   </>

@@ -1,14 +1,17 @@
-.btn{
- background-color: #000000;
- color: #ffffff;
- padding: 0.5em 1em;
+.btn_criar{ 
+ background-color: rgba(65, 161, 82, 1);
+ color: #000000;
  text-decoration: none;
- transition: 0.5s;
+ transition: 0.8s;
  border-radius: 8px;
- border: 2px solid #6fce38;
+ border: 2px solid rgb(0, 0, 0);
+ font-weight: 700;
  cursor: pointer;
+ height: 45px;
+ font-size: 14px;
+ width: 130px; 
 }
 
-.btn:hover{
- color: #6fce38;
-}
+.btn_criar:hover{
+    color: rgb(255, 255, 255);
+   }

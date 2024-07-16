@@ -2,6 +2,10 @@
     width: 450px;
     margin: 0 auto;
     padding: 3em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .newproject_container h1{
@@ -9,5 +13,5 @@
 }
 
 .newproject_container p {
-    color: #7b7b7b;
+    color: #4b4b4b;
 }

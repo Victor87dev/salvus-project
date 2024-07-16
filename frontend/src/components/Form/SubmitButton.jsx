@@ -1,9 +1,9 @@
-import "./SubmitButton.css"
+import "./SubmitButton"
 
 const SubmitButton = ({ text })=>{
   return(
     <div>
-        <button className="btn">{text}</button>
+        <button className="btn_criar">{text}</button>
     </div>
   )
 }
