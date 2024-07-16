@@ -31,19 +31,15 @@ const EditProduct = ()=>{
       .then((resp)=>resp.json())
       .then((data) => {
       setProduct(data)
+      console.log(product)
       })
       .catch((err)=>console.log(err))
     }, 500)
   }, [id])
-
+  
   function editPost(product){
-
-    setMessage('')
-
-    console.log(product)
-
       fetch(`http://localhost:3000/produto/${id}`,{
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -63,10 +59,10 @@ const EditProduct = ()=>{
     setShowProductForm(!showProductForm)
   }
   
-  
+ 
   return(<>
   
-    {product.length > 0 ? (
+    {product.length ? (
       
      <div className="product_details">
       <Container customClass="column">
@@ -99,7 +95,7 @@ const EditProduct = ()=>{
             : 
             (
               <div className="product_info">
-                <ProductForm handleSubmit={editPost} btnText="Concluir edição" productData={product}/>
+                <ProductForm handleSubmit={editPost} btnText="Concluir edição" productData={product[0]}/>
               </div>
             )
             }
