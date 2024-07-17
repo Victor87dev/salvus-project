@@ -7,6 +7,7 @@ import LinkButton from "../../layout/LinkButton"
 import Loading from "../../layout/Loading"
 import ProductCard from "../Product/ProductCard"
 
+
 import "./Home.css"
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
   const [products, setProducts] = useState([])
   const [removeLoading, setRemoveLoading] = useState(false)
   const [productMessage, setProductMessage] = useState('')
+  const [type, setType] = useState()
 
   const location = useLocation()
   let message = ''
@@ -68,7 +70,7 @@ const Home = () => {
         <LinkButton to="/novo_produto" text="Criar Produto"/>
       </div>
       {message && <Message  type="sucess" msg={message}/>}
-      {productMessage && <Message  type="sucess" msg={productMessage}/>}
+      {productMessage && <Message  type="error" msg={productMessage}/>}
       <Container customClass="start">
         {products.length > 0 &&
           products.map((product) => (

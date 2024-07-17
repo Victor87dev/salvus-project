@@ -38,6 +38,7 @@ const EditProduct = ()=>{
   }, [id])
   
   function editPost(product){
+    
     setTimeout(()=>{
       fetch(`http://localhost:3000/produto/${id}`,{
         method: 'PUT',
@@ -47,7 +48,7 @@ const EditProduct = ()=>{
         body: JSON.stringify(product),
       })
       .catch((err) => console.log(err))
-      
+      console.log(product.DATA)
       setMessage('Seu projeto será atualizado em instantes!')
       setType('sucess')
 
@@ -58,6 +59,17 @@ const EditProduct = ()=>{
   }
 
   function toggleProductForm(){
+    console.log("estouaaa")
+    if(product.nome !== '' && product.descricao !== '' && product.preco !== null && product.DATA !== ''){
+      product[0].nome = ""
+      product[0].descricao = ""
+      product[0].preco = null
+      product[0].DATA = ""
+      console.log("entrei")
+     }
+
+     console.log(product[0].nome)
+     console.log(product[0].preco)
     setShowProductForm(!showProductForm)
   }
 
@@ -66,9 +78,9 @@ const EditProduct = ()=>{
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
-    return `${year}/${month}/${day}`; // Formato AAAA-MM-DD
+    return `${day}/${month}/${year}`; // Formato AAAA-MM-DD
 };
- 
+
   return(<>
   
     {product.length ? (

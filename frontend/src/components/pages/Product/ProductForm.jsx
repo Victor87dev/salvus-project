@@ -4,7 +4,7 @@ import Input from "../../Form/Input"
 import SubmitButton from "../../Form/SubmitButton"
 import Message from "../../layout/Message"
 
-const ProjectForm = ({ handleSubmit, btnText, productData})=>{
+const ProductForm = ({ handleSubmit, btnText, productData})=>{
 
   const [product, setProduct] = useState(productData || {})
   const [message, setMessage] = useState()
@@ -17,6 +17,7 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`; // Formato AAAA-MM-DD
 };
+
   
   const submit = (e)=>{
     if(product.nome === undefined || product.descricao === undefined || product.preco === undefined || product.DATA === undefined || product.nome === '' || product.descricao === '' || product.preco === '' || product.DATA === ''){
@@ -41,18 +42,16 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
   function handleChange(e){
     setProduct({ ...product, [e.target.name]: e.target.value})
   }
-
-
-
-  console.log(product.DATA)  
+  
+  
 
   return(<>
   {message && <Message type={type} msg={message}/>}
     <form onSubmit={submit} className="form">
-        <Input type="text" text="Nome do produto" name="nome" placeholder="Insira o nome do produto" handleOnChange={handleChange} value={product.nome ? product.nome : ''}/>
-        <Input type="text" text="Descrição do produto" name="descricao" placeholder="Insira uma descrição" handleOnChange={handleChange} value={product.descricao ? product.descricao : ''}/>
-        <Input type="number" text="Valor do produto" name="preco" placeholder="Insira o valor" handleOnChange={handleChange} value={product.preco ? product.preco : ''}/>
-        <Input type="date" text="Data de criação" name="DATA" placeholder="Insira a data" handleOnChange={handleChange} value={product.DATA ? product.DATA : ''}/>
+        <Input type="text" text="Nome do produto" name="nome" placeholder={product.nome === "" ? "Insira o novo nome" : "Insira o nome"} handleOnChange={handleChange} value={product.nome}/>
+        <Input type="text" text="Descrição do produto" name="descricao" placeholder={product.descricao === "" ? "Insira uma nova descrição" : "Insira uma descrição"} handleOnChange={handleChange} value={product.descricao}/>
+        <Input type="number" text="Valor do produto" name="preco" placeholder={product.preco === null ? "Insira o novo preço" : "Insira o preço"} handleOnChange={handleChange} value={product.preco}/>
+        <Input type="date" text="Data de criação" name="DATA" placeholder="Insira a data" handleOnChange={handleChange} value={product.DATA}/>
         <SubmitButton text={btnText}/>
     </form>
   </>
@@ -60,4 +59,4 @@ const ProjectForm = ({ handleSubmit, btnText, productData})=>{
   )
 }
 
-export default ProjectForm
+export default ProductForm

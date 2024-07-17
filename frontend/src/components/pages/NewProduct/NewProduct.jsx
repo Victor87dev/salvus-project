@@ -33,7 +33,7 @@ const NewProduct = ()=>{
             <h1>Criar Produto</h1>
             <p>Preencha os dados para criar seu produto</p>
             <ProductForm handleSubmit={createProd} btnText="Criar Produto"/>
-             <LinkButton to="/" text="Voltar"/>
+            <LinkButton to="/" text="Voltar"/>
         </div>
     )
 }
