@@ -1,20 +1,20 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 const cors = require('cors')
 
-app.use(cors({
-   origin: 'http://localhost:5173'
-}));
+app.use(cors());
 
 const appCustom = require("./config/appCustom.cjs")
 
 appCustom(app, express)
 
-app.listen(port, (error) => {
-   if(error) {
-    console.log("Deu erro");
-    return;
+const port = process.env.PORT || 3000;
+const host = '0.0.0.0';
+
+app.listen(port, host, (error) => {
+   if (error) {
+      console.log("Deu erro");
+      return;
    }
-   console.log("Subiu show")
+   console.log("Subiu show");
 });
