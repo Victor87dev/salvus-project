@@ -22,7 +22,14 @@
 
 @media screen and (max-width: 750px){
  .btn{   
-    width: 120px;
+    width: 130px;
     font-size: 14px;
  }
 }
+
+@media screen and (max-width: 600px){
+   .btn{   
+      width: 135px;
+      font-size: 14px;
+   }
+  }
