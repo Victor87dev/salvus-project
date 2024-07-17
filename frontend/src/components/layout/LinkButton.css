@@ -1,6 +1,6 @@
 .btn{
  background-color: rgba(65, 161, 82, 1);
- color: #000000;
+ color: #ffffff;
  padding: 0.7em;
  text-decoration: none;
  transition: 0.8s;
@@ -17,7 +17,7 @@
 }
 
 .btn:hover{
- color: rgb(255, 255, 255);
+   background-color:  rgb(39, 112, 53);
 }
 
 @media screen and (max-width: 750px){

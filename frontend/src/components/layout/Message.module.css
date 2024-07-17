@@ -9,14 +9,15 @@
 }
 
 .sucess{
- color: #000000;
- background-color: #ffffff;
- border: 2px solid #28b348;
+ color: #ffffff;
+ background-color: rgba(65, 161, 82, 1);
+ border: 2px solid #ffffff;
  font-weight: bold;
 }
 
 .error{
  color: #721c24;
  background-color: #f8d7da;
- border-color: #f5c6cd;
+ border-color: #721c24;
+ font-weight: bold;
 }

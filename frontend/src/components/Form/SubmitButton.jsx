@@ -1,4 +1,4 @@
-import "./SubmitButton"
+import "./SubmitButton.css"
 
 const SubmitButton = ({ text })=>{
   return(

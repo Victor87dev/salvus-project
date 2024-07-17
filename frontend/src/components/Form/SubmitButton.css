@@ -1,6 +1,6 @@
 .btn_criar{ 
  background-color: rgba(65, 161, 82, 1);
- color: #000000;
+ color: #fff;
  text-decoration: none;
  transition: 0.8s;
  border-radius: 8px;
@@ -13,5 +13,5 @@
 }
 
 .btn_criar:hover{
-    color: rgb(255, 255, 255);
-   }
+    background-color: rgb(39, 112, 53);
+}
