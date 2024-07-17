@@ -127,11 +127,13 @@ margin-left: 10px;
 
 }
 
-@media screen and (max-width: 400px){
-.product_card {
- width: 70%;
+@media screen and (max-width: 440px){
+  .product_card {
+   width: 85%;
+}
 }
 
+@media screen and (max-width: 400px){
 .product_card_actions{
  margin-left: 0px;
 }

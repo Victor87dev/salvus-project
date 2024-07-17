@@ -30,7 +30,14 @@
 } 
 }
 
+@media screen and (max-width: 500px){
+.title_container h1{
+    margin: 15px;
+    margin-top: 5px;
+    font-size: 22px;
+} 
 
+}
 
 @media screen and (max-width: 440px){
 .title_container{
@@ -40,5 +47,6 @@
 
 .title_container h1{
     margin-bottom: 30px;
+    margin: 10px;
 } 
 }
