@@ -1,11 +1,11 @@
-const mysql = require("mysql");
+const mysql = require('mysql2');
 
 const conexao = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
+  host: "monorail.proxy.rlwy.net",
+  port: 40709,
   user: "root",
-  password: "root",
-  database: "controle_produtos",
+  password: "jVAOYUZzRwHnmqybpUUCcqlxZgVKNZej",
+  database: "railway",
 });
 
-module.exports = conexao
+module.exports = conexao;

@@ -3,7 +3,6 @@ import "./ProductForm.css"
 import Input from "../../Form/Input"
 import SubmitButton from "../../Form/SubmitButton"
 import Message from "../../layout/Message"
-import TextArea from "../../Form/TextArea"
 
 const ProductForm = ({ handleSubmit, btnText, productData})=>{
 
