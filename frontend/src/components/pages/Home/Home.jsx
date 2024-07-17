@@ -66,7 +66,7 @@ const Home = () => {
   return (
     <div className="product_container">
       <div className="title_container">
-        <h1 className="title">Meus Produtos</h1>
+        <h1 className="title">Meus  <span className="span_produtos">  Produtos</span></h1>
         <LinkButton to="/novo_produto" text="Criar Produto"/>
       </div>
       {message && <Message  type="sucess" msg={message}/>}
