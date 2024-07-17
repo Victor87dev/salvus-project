@@ -11,7 +11,7 @@ const NewProduct = ()=>{
     
     const createProd = (product)=>{
 
-    fetch(`http://localhost:3000/produtos`,{
+    fetch(`https://salvus-project-production.up.railway.app/produtos`,{
      method: "POST",
      headers: {
      'Content-type': 'application/json',

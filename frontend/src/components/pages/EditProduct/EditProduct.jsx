@@ -22,7 +22,7 @@ const EditProduct = ()=>{
 
   useEffect(()=>{
     setTimeout(()=>{
-      fetch(`http://localhost:3000/produtos/${id}`,{
+      fetch(`https://salvus-project-production.up.railway.app/produtos/${id}`,{
          method: 'GET',
          headers: {
           'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const EditProduct = ()=>{
   function editPost(product){
     
     setTimeout(()=>{
-      fetch(`http://localhost:3000/produto/${id}`,{
+      fetch(`https://salvus-project-production.up.railway.app/produto/${id}`,{
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

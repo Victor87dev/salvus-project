@@ -25,7 +25,7 @@ const Home = () => {
 
   useEffect(()=>{
     setTimeout(()=>{
-      fetch('http://localhost:3000/produtos',{
+      fetch('https://salvus-project-production.up.railway.app/produtos',{
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const Home = () => {
 
     setProductMessage('')
 
-    fetch(`http://localhost:3000/produto/${id}`,{
+    fetch(`https://salvus-project-production.up.railway.app/produto/${id}`,{
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
