@@ -6,3 +6,19 @@
 .macro{
     margin-top: 10px;
 }
+
+.desc_area{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;;
+}
+
+textarea{
+    border: none;
+}
+
+label{
+    font-weight: bold;
+}
+
+

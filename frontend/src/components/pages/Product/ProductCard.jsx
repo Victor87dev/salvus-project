@@ -21,13 +21,14 @@ const ProductCard = ({id, nome, descricao, preco, DATA, handleRemove})=>{
         <div className="product_card">
             <h4>{nome}</h4>
             <p>
-               <span>Descrição</span> {descricao}
+            <span>Preço</span> R${preco}
             </p>
-            <p>
-               <span>Preço</span> R${preco}
-            </p>
-            <p>
+            <p>   
                <span>Data</span> {formatDate(DATA)}
+            </p>
+            <p>
+               
+               <span>Descrição</span> {descricao}
             </p>
             <div className="product_card_actions">
                 <Link to={`/editar_produto/${id}`}>

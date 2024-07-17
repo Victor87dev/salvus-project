@@ -93,7 +93,7 @@
 }
 .product_card_actions a,
 .product_card_actions button{
- padding: .6em 1em;
+ padding: .4em;
  font-size: .8em;
 }
 .product_card_actions{
@@ -106,6 +106,10 @@
 .product_card_actions button{
  padding: .6em 1em;
  font-size: .6em;
+}
+
+.product_card_actions{
+margin-left: 10px;
 }
 }
 
@@ -140,14 +144,14 @@
 }
 
 .product_card_actions{
-  margin-left: -3px;
+  margin-left: 8px;
 }
 
 }
 
 @media screen and (max-width: 315px){
 .product_card_actions{
-  margin-left: -8px;
+  margin-left: 8px;
 }
 
 }
