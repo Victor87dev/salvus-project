@@ -30,7 +30,7 @@ const NewProduct = ()=>{
     
     return (
         <div className="newproject_container">
-            <h1>Criar Produto</h1>
+            <h1>Criar <span className="span_produto">Produto</span></h1>
             <p>Preencha os dados para criar seu produto</p>
             <ProductForm handleSubmit={createProd} btnText="Criar Produto"/>
             <LinkButton to="/" text="Voltar"/>

@@ -16,6 +16,18 @@
     color: #4b4b4b;
 }
 
+@media screen and (max-width: 500px){
+h1{
+    background-color: #fff;
+    width: 260px;
+    padding: 12px;
+    border-radius: 8px;
+}
+.span_produto{
+    color: rgba(65, 161, 82, 1);
+}
+}
+
 @media screen and (max-width: 470px){
    .newproject_container{
     width: 400px;
@@ -23,7 +35,12 @@
 }
 
 @media screen and (max-width: 420px){
-    .newproject_container{
-        width: 300px;
-       }
+.newproject_container{
+ width: 300px;
+}
+
+h1{
+ width: 200px;
+ font-size: 25px;
+}
 }
