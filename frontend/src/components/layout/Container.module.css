@@ -60,14 +60,13 @@
 
 @media screen and (max-width: 500px){
 .container{
- width: 300px;
+ width: 100%;
 }
 
 .start{
  flex-direction: column;
  justify-content: center;
  align-items: center;
- margin-left: -25px;
 }
 }
 
@@ -76,25 +75,26 @@
  justify-content: center;
 }
 
-.start{
- margin-left: 0px;
+.container{
+ width: 100%;
 }
+
 }
 
 @media screen and (max-width: 400px){
 .container{
- width: 280px;
+ width: 100%;
 }
 }
 
 @media screen and (max-width: 350px){
 .container{
- width: 240px;
+ width: 100%;
 }
 }
 
 @media screen and (max-width: 315px){
 .container{
- width: 226px;
+ width: 100%;
 }
 }
