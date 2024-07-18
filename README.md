@@ -4,7 +4,7 @@
 
 ## O que é o Projeto Salvus ?
 
-O Projeto Salvus é uma aplicação fullstack, faz parte da segunda etapa para a vaga Desenvolvedor Web na empresa Salvus, consiste em um CRUD onde o usúario poderá visualizar seu produto, criar, editar e deletar. podendo incluir algumas informações ao produto como data de criação do produto, preço, descrição e nome.
+O Projeto Salvus é uma aplicação fullstack, faz parte da segunda etapa para a vaga Desenvolvedor Web de sistemas na empresa Salvus, consiste em um CRUD onde o usúario poderá visualizar seu produto, criar, editar e deletar. podendo incluir algumas informações ao produto como data de criação do produto, preço, descrição e nome.
 
 ### Tecnologias Utilizadas (Front)
 
